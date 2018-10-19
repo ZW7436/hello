@@ -1,0 +1,44 @@
+# example_dataRecord
+
+#注意使用英文标点符号即半角符号，文件用 UTF-8 编码
+
+#文件说明
+class: dataRecord                       #类别
+name: 大十字结面积测试                   #模板名字，保证唯一，
+complete_date: 2018-08-19                 #日期格式固定，会识别为python可读的日期对象
+recorder: [LZY,]                       #记录者
+
+description : 测试大十字结工艺的结面积        #描述
+comment: ~                           #备注
+tag: []                            #标签
+
+relate:                             # 关联其他的模块,根据实际情况添加,可以没有
+  Layout: [LZY111_8bits_20180819,]
+#   Wafer: [20181001A,]
+#   dataRecord: []
+  
+parameter_reset: ~                     #重置的参数,也可添加其他必要参数  
+
+#记录
+record:
+  3J:                             #每个记录下必须要有 description,unit,data 三项,其他关键字可以另加
+    description: 串联3个约瑟夫森结的结面积横纵方向的长度
+    unit: nm
+   # 数据记录也是字典，格式类似于excel表格,下例中 x,y 各是一列数据,可以被 pandas.DataFrame 转化
+    data:                               
+      x: [448.9,451.1,461.3,482.2,460]
+      y: [431.1,446.7,421.3,466.7,418.3]
+    design: 696                      #其他有用的参数
+  4J:
+    description: 串联4个约瑟夫森结的结面积横纵方向的长度
+    unit : nm
+    data: 
+      x: [528.9,508.9,535.6,504.4,525.3,502.2]
+      y: [475.6,511.1,502.2,542.2,485.3,520]
+    design: 746    
+    
+    
+
+#其他参数说明，可以视情况添加
+# other:
+#     other: ~
